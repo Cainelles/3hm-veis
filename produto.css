@@ -1,0 +1,681 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:#252536;
+    color:white;
+    min-height:100vh;
+
+}
+
+
+
+header{
+
+    min-height:50px;
+    padding:0px 10px;
+
+    display:flex;
+    align-items:center;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+.logo{
+
+    font-size:38px;
+    font-weight:bold;
+
+}
+
+
+.logo span{
+
+    color:#2d6fbb;
+
+}
+
+
+
+
+.produto-container{
+
+    width:min(95%,1100px);
+
+    margin:40px auto;
+
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.menu a{
+    color:white;
+    font-size:24px;
+}
+
+.menu button{
+    background:#2d6fbb;
+    border:none;
+    color:white;
+    padding:12px 24px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+
+
+
+
+/* PRODUTO PRINCIPAL */
+
+.produto-detalhes{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+
+    border:2px solid #2d6fbb;
+
+    border-radius:25px;
+
+    padding:30px;
+
+}
+
+
+
+
+
+/* FOTO */
+
+.imagem-principal{
+
+    width:45%;
+
+}
+
+
+
+.imagem-principal img{
+
+    width:100%;
+
+    height:380px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* INFORMAÇÕES */
+
+
+.informacoes{
+
+    width:55%;
+
+}
+
+
+
+.informacoes h1{
+
+    font-size:clamp(25px,4vw,40px);
+
+    font-weight:300;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.informacoes h2{
+
+    color:#2d6fbb;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.informacoes p{
+
+    color:#ddd;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   CÓDIGO NOVO: SEÇÃO DA EQUIPE (3H MÓVEIS)
+============================================================ */
+.galeria {
+    position: relative; /* Faz o texto gigante ficar atrás */
+    display: flex;
+    gap: 10px;
+    padding: 40px;
+    justify-content: center;
+    align-items: flex-end; /* Alinha os 3 integrantes na base */
+    min-height: 550px; /* Dá altura para o efeito acontecer */
+    overflow: hidden;
+}
+
+/* Marca d'água (Texto gigante atrás) */
+.marca-agua {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1; /* Fica atrás das fotos */
+    pointer-events: none; /* Não interfere nos cliques */
+    user-select: none;
+    width: 100%;
+}
+
+.marca-agua h1 {
+    font-size: clamp(8rem, 18vw, 15rem);
+    font-family: 'Arial Black', Impact, sans-serif;
+    color: #313146; /* Tom escuro integrado ao fundo #252536 */
+    line-height: 0.8;
+}
+
+.marca-agua h2 {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-family: 'Arial Black', Impact, sans-serif;
+    color: #2d6fbb; /* O mesmo azul padrão do seu site */
+    letter-spacing: -2px;
+    margin-top: -10px;
+}
+
+/* Modificações específicas para os cards dos integrantes */
+.imagem-scroll {
+    position: relative;
+    width: clamp(180px, 25vw, 320px);
+    border-radius: 0; /* Remove o arredondado para as fotos irem até o chão */
+    z-index: 2; /* Fica na frente da marca d'água */
+    cursor: pointer;
+    bottom: -20px;
+    transition: transform 0.4s ease, filter 0.4s ease, opacity 0.8s;
+}
+
+/* Efeito de iluminação focado (assim como na foto) */
+.imagem-scroll img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.55) grayscale(0.2); /* Mais escuras por padrão */
+    transition: filter 0.3s ease;
+}
+
+/* Quando passa o mouse ou quando o card tiver a classe '.ativo' via JS */
+.imagem-scroll:hover img,
+.imagem-scroll.ativo img {
+    filter: brightness(1.1) grayscale(0); /* Acende e ganha cor original */
+}
+
+.imagem-scroll:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Ajustes de Responsividade para Telas Menores */
+@media (max-width: 900px) {
+    .galeria {
+        min-height: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .imagem-scroll {
+        width: 70%;
+    }
+}
+
+
+
+
+
+/* PROJETO + PEDIDO */
+
+
+.projeto{
+
+    margin-top:50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:40px;
+
+}
+
+
+
+
+
+.projeto-imagem{
+
+    width:55%;
+
+}
+
+
+
+.projeto-imagem h2{
+
+    font-size:32px;
+
+    font-weight:300;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.projeto-imagem img{
+
+    width:100%;
+
+    max-width:500px;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+
+/* PEDIDO */
+
+
+.pedido{
+
+    width:40%;
+
+    border:2px solid #2d6fbb;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-top:60px;
+
+}
+
+
+
+.pedido h2{
+
+    font-size:28px;
+
+    font-weight:300;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+.pedido textarea{
+
+    width:100%;
+
+    height:130px;
+
+    resize:none;
+
+    background:#303044;
+
+    color:white;
+
+    border:1px solid #2d6fbb;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+.pedido textarea::placeholder{
+
+    color:#aaa;
+
+}
+
+
+
+
+.pedido button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#2d6fbb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.pedido button:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo{
+    width:100px;
+}
+
+
+
+
+/* TABLET */
+
+
+@media(max-width:900px){
+
+
+.produto-detalhes{
+
+    gap:25px;
+
+}
+
+
+.imagem-principal img{
+
+    height:300px;
+
+}
+
+
+.projeto{
+
+    gap:25px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* CELULAR */
+
+
+@media(max-width:650px){
+
+
+
+header{
+
+    padding:20px;
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+
+}
+
+
+
+
+.produto-container{
+
+    margin:25px auto;
+
+}
+
+
+
+
+.produto-detalhes{
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+
+
+
+.imagem-principal{
+
+    width:100%;
+
+}
+
+
+
+
+.imagem-principal img{
+
+    height:280px;
+
+}
+
+
+
+
+.informacoes{
+
+    width:100%;
+
+}
+
+
+
+
+.informacoes h1{
+
+    font-size:28px;
+
+}
+
+
+
+.informacoes h2{
+
+    font-size:24px;
+
+}
+
+
+
+
+.informacoes p{
+
+    font-size:16px;
+
+}
+
+
+
+
+
+
+
+.projeto{
+
+    flex-direction:column;
+
+    margin-top:35px;
+
+}
+
+
+
+
+.projeto-imagem{
+
+    width:100%;
+
+}
+
+
+
+
+.projeto-imagem img{
+
+    max-width:100%;
+
+}
+
+
+
+
+
+.pedido{
+
+    width:100%;
+
+    margin-top:0;
+
+}
+
+
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:80px;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding:50px 20px 25px;
+    text-align:center;
+    background:rgba(0,0,0,.15);
+}
+
+.footer-logo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.footer-logo img{
+    width:120px;
+    object-fit:contain;
+}
+
+.footer-logo h2{
+    font-size:32px;
+    font-weight:300;
+    letter-spacing:3px;
+    color:white;
+}
+
+.footer-info{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.footer-info p{
+    color:#d8d8d8;
+    line-height:1.8;
+}
+
+.footer-info a{
+    color:#2d6fbb;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.footer-info a:hover{
+    color:white;
+}
+
+.footer-info i{
+    margin-right:8px;
+}
+
+.footer-copy{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:rgba(255,255,255,.55);
+    font-size:14px;
+}
